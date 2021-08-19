@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Login from "../components/Login";
-import Navbar from "../components/navbar";
+import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
 import { useSelector } from "react-redux";
 import { logout } from "../redux/user";
@@ -16,7 +16,7 @@ export default function Home() {
         <meta name="description" content="Non Authenticated home page" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      <Navbar />
+      <Header />
 
       <div className={styles.container}>
         <p>

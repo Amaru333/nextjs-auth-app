@@ -1,4 +1,4 @@
-import Navbar from "../../components/navbar";
+import Header from "../../components/Header";
 import { useSelector } from "react-redux";
 import Head from "next/head";
 
@@ -12,7 +12,7 @@ export default function Profile() {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <div>
-        <Navbar />
+        <Header />
         <div style={{ width: "70%", margin: "auto" }}>
           {user.status === false ? (
             <p>This route is authenticated. Please login to view the page</p>
