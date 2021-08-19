@@ -2,7 +2,7 @@ import Navbar from "../../components/navbar";
 import { useSelector } from "react-redux";
 import Head from "next/head";
 
-export default function profile() {
+export default function Profile() {
   const user = useSelector((state) => state.user.value);
   return (
     <div>
