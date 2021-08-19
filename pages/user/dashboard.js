@@ -1,9 +1,19 @@
+import React, { useEffect } from "react";
 import Header from "../../components/Header";
 import { useSelector } from "react-redux";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
-export default function Profile() {
+export default function Dashboard() {
+  const Router = useRouter();
   const user = useSelector((state) => state.user.value);
+
+  useEffect(() => {
+    if (user.status === false) {
+      Router.replace("/user/login");
+    }
+  });
+
   return (
     <div>
       <Head>

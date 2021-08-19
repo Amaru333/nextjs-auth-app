@@ -19,11 +19,8 @@ export default function Home() {
       <Header />
 
       <div className={styles.container}>
-        <p>
-          Welcome to the home page. This is a non authenticated route, i.e
-          anyone can access this route
-        </p>
-        {user.status === false ? (
+        <p>Welcome to the home page. This is a non authenticated route.</p>
+        {/* {user.status === false ? (
           <Login />
         ) : (
           <>
@@ -37,7 +34,7 @@ export default function Home() {
               Logout
             </button>
           </>
-        )}
+        )} */}
       </div>
     </div>
   );
