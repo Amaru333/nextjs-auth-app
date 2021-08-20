@@ -12,6 +12,12 @@ function Login() {
     setUsername(e.target.value);
   };
 
+  const handleLogin = () => {
+    localStorage.setItem("name", username);
+    dispatch(login({ username: username, status: true }));
+    router.back();
+  };
+
   return (
     <div className={styles.container}>
       <p>Login</p>
@@ -21,12 +27,7 @@ function Login() {
         placeholder="Username"
         onChange={handleUsername}
       />
-      <button
-        onClick={() => {
-          dispatch(login({ username: username, status: true }));
-        }}
-        className={styles.button}
-      >
+      <button onClick={handleLogin} className={styles.button}>
         Login
       </button>
     </div>

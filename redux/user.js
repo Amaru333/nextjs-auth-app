@@ -1,6 +1,7 @@
+import { useEffect } from "react";
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialStateValue = { username: "", status: false };
+let initialStateValue = { username: "", status: false };
 
 export const userSlice = createSlice({
   name: "user",

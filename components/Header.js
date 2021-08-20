@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { logout } from "../redux/user";
+import { login, logout } from "../redux/user";
 
 function Navbar() {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (localStorage.getItem("name")) {
+      dispatch(login({ username: localStorage.getItem("name"), status: true }));
+    }
+  });
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
   return (
@@ -32,6 +40,7 @@ function Navbar() {
             className={styles.navbar_item}
             style={{ cursor: "pointer" }}
             onClick={() => {
+              localStorage.removeItem("name");
               dispatch(logout());
             }}
           >

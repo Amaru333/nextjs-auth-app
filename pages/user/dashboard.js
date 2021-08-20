@@ -12,7 +12,7 @@ export default function Dashboard() {
     if (user.status === false) {
       Router.replace("/user/login");
     }
-  });
+  }, [user.status]);
 
   return (
     <div>
