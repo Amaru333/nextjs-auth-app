@@ -15,7 +15,6 @@ function Login() {
   const handleLogin = () => {
     localStorage.setItem("name", username);
     dispatch(login({ username: username, status: true }));
-    router.back();
   };
 
   return (
