@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { createSlice } from "@reduxjs/toolkit";
 
 let initialStateValue = { username: "", status: false };

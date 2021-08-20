@@ -13,7 +13,7 @@ function Navbar() {
     if (localStorage.getItem("name")) {
       dispatch(login({ username: localStorage.getItem("name"), status: true }));
     }
-  });
+  }, []);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
   return (
